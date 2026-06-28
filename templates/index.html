@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Sementara - Vercel</title>
+    <title>Temp Mail - Tes Vercel</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 min-h-screen p-4 md:p-8">
     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6">
-        <h1 class="text-2xl font-bold text-center text-indigo-700 mb-4">📬 Kotak Masuk Kamu</h1>
-        <p class="text-center text-gray-600 mb-6">Gunakan alamat apa saja di @namakamu.web.id</p>
+        <h1 class="text-2xl font-bold text-center text-indigo-700 mb-4">📬 Kotak Masuk (Tes)</h1>
+        <p class="text-center text-gray-600 mb-6">Gunakan alamat apa saja di domain kamu</p>
 
         {% if emails %}
         <div class="space-y-4">
             {% for email in emails %}
             <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
                 <div class="flex justify-between items-center mb-2">
-                    <span class="font-semibold text-gray-800">Ke: {{ email.to_addr }}</span>
+                    <span class="font-semibold text-gray-800">Ke: {{ email.to }}</span>
                     <span class="text-sm text-gray-500">{{ email.received_at }}</span>
                 </div>
-                <div class="text-sm text-gray-600 mb-1">Dari: {{ email.from_addr }}</div>
+                <div class="text-sm text-gray-600 mb-1">Dari: {{ email.from }}</div>
                 <h3 class="font-medium text-gray-900 mb-2">{{ email.subject }}</h3>
                 <div class="bg-gray-50 p-3 rounded text-sm whitespace-pre-wrap">{{ email.body }}</div>
             </div>
@@ -27,10 +27,10 @@
         </div>
         {% else %}
         <div class="text-center py-10 text-gray-500">
-            Belum ada email yang masuk. Kirim surat ke alamat apa saja di domain kamu 😊
+            Belum ada email masuk...
         </div>
         {% endif %}
     </div>
 </body>
-    </html>
+                        </html>
     
